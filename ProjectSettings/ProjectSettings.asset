@@ -525,7 +525,7 @@ PlayerSettings:
     Game_Performance: 0
     Hub: 0
     Purchasing: 0
-    UNet: 1
+    UNet: 0
     Unity_Ads: 0
   cloudProjectId: 94bb4d69-6fbb-4abf-9db4-666b499f9fab
   projectName: VRMultiplayer

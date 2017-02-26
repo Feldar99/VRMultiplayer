@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 81ba341193e56f746bf68e36c8da9806
+timeCreated: 1488084415
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: TEN O CLOCK
+  fontNames:
+  - TEN O CLOCK
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 33903830241961898}
   - component: {fileID: 65290550780982402}
   - component: {fileID: 23371526385344978}
-  - component: {fileID: 54406084416220886}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -323,21 +322,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1590492672463302}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54406084416220886
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1590492672463302}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &65290550780982402
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -453,7 +437,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e43ba04df779334c965573a0b98e398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Locked: 0
+  unlockSound: {fileID: 8300000, guid: 7416ca521d766284384efbd7bf11e13b, type: 3}
+  successSound: {fileID: 8300000, guid: 0c31b9661e8c5c64db02c8fb23058241, type: 3}
 --- !u!135 &135638801198307114
 SphereCollider:
   m_ObjectHideFlags: 1

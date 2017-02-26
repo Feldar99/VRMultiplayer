@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
             instance = this;
             GameObject.DontDestroyOnLoad(this);
         }
-        else
+        else if (instance != this)
         {
             GameObject.Destroy(this);
         }

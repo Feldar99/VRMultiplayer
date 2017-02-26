@@ -853,7 +853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - Demo scene
-  - Button
+  - Demo scene2
 --- !u!1 &830871550
 GameObject:
   m_ObjectHideFlags: 0

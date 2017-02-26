@@ -7,5 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Basement pack/Demo scene.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Button.unity
+  - enabled: 1
+    path: Assets/Basement pack/Demo scene2.unity

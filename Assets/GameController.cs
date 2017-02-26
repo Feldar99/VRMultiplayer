@@ -22,11 +22,14 @@ public class GameController : MonoBehaviour
         {
             GameObject.Destroy(this);
         }
+
+
     }
 
     public void NextLevel()
     {
         sceneIndex = (sceneIndex + 1) % scenes.Length;
         SceneManager.LoadScene(scenes[sceneIndex]);
+
     }
 }

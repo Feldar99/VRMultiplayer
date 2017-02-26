@@ -53,7 +53,7 @@ namespace NewtonVR
             CurrentValue = GetValue();
             CurrentLeverPosition = GetPosition();
 
-            if (LastLeverPosition != LeverPosition.On && CurrentLeverPosition == LeverPosition.On)
+            if (CurrentLeverPosition == LeverPosition.On)
             {
                 LeverEngaged = true;
                 Engage();

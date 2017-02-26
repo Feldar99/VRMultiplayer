@@ -16,11 +16,11 @@ public class GameController : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            GameObject.DontDestroyOnLoad(this);
+            GameObject.DontDestroyOnLoad(gameObject);
         }
         else if (instance != this)
         {
-            GameObject.Destroy(this);
+            GameObject.Destroy(gameObject);
         }
 
 
@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour
     public void NextLevel()
     {
         sceneIndex = (sceneIndex + 1) % scenes.Length;
+        Debug.Log("Loading scene " + sceneIndex + ": " + scenes[sceneIndex]);
         SceneManager.LoadScene(scenes[sceneIndex]);
 
     }

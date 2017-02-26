@@ -6,11 +6,12 @@ public class UnlockedLeverGroup : MonoBehaviour {
 
 	[SerializeField]
 	private DoorKnob doorknob;
-	public UnlockLever[] levers;
+	private UnlockLever[] levers;
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+	{
+	    levers = GetComponentsInChildren<UnlockLever>();
 	}
 	
 	// Update is called once per frame

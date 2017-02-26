@@ -17,6 +17,8 @@ public class UnlockLever : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+        Debug.Log(GetComponentInChildren<NVRLever>());
+        Debug.Log(GetComponentInChildren<NVRLever>().LeverEngaged);
 		UnlockedPosition = (shouldBeEngaged == GetComponentInChildren<NVRLever>().LeverEngaged);
 	}
 }

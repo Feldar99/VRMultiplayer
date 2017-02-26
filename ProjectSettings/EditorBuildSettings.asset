@@ -11,3 +11,7 @@ EditorBuildSettings:
     path: Assets/Button.unity
   - enabled: 1
     path: Assets/Basement pack/Demo scene2.unity
+  - enabled: 1
+    path: Assets/Basement pack/Demo scene3_lever.unity
+  - enabled: 1
+    path: Assets/Basement pack/Demo scene4.unity

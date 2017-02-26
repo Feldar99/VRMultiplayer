@@ -4,8 +4,10 @@ using UnityEngine;
 using NewtonVR;
 
 public class UnlockLever : MonoBehaviour {
+	
 	[SerializeField]
-	private DoorKnob doorknob ;
+	private bool shouldBeEngaged;
+	public bool UnlockedPosition;
 
 
 	// Use this for initialization
@@ -15,8 +17,6 @@ public class UnlockLever : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (GetComponents<NVRLever> ().LeverEngaged) {
-			doorknob.Locked = false;
-		}
+		UnlockedPosition = (shouldBeEngaged == GetComponentInChildren<NVRLever>().LeverEngaged);
 	}
 }

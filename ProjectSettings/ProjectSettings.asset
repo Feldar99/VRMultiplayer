@@ -439,7 +439,6 @@ PlayerSettings:
   platformArchitecture: {}
   scriptingBackend:
     Standalone: 0
-    WebPlayer: 0
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
   m_RenderingPath: 1
@@ -476,8 +475,13 @@ PlayerSettings:
   tizenGPSPermissions: 0
   tizenMicrophonePermissions: 0
   tizenDeploymentTarget: 
+<<<<<<< HEAD
   tizenDeploymentTargetType: -252843268
   tizenMinOSVersion: 1
+=======
+  tizenDeploymentTargetType: -256
+  tizenMinOSVersion: 0
+>>>>>>> ae70b92ccd398224a89e09fe9e6b393ab32dd049
   n3dsUseExtSaveData: 0
   n3dsCompressStaticMem: 1
   n3dsExtSaveDataNumber: 0x12345
@@ -526,7 +530,7 @@ PlayerSettings:
     Game_Performance: 0
     Hub: 0
     Purchasing: 0
-    UNet: 1
+    UNet: 0
     Unity_Ads: 0
   cloudProjectId: 94bb4d69-6fbb-4abf-9db4-666b499f9fab
   projectName: VRMultiplayer

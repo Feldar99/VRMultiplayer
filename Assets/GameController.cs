@@ -18,15 +18,18 @@ public class GameController : MonoBehaviour
             instance = this;
             GameObject.DontDestroyOnLoad(this);
         }
-        else
+        else if (instance != this)
         {
             GameObject.Destroy(this);
         }
+
+
     }
 
     public void NextLevel()
     {
         sceneIndex = (sceneIndex + 1) % scenes.Length;
         SceneManager.LoadScene(scenes[sceneIndex]);
+
     }
 }

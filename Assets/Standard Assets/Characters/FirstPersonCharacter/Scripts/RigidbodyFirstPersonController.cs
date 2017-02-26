@@ -6,8 +6,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (Rigidbody))]
     [RequireComponent(typeof (CapsuleCollider))]
+
     public class RigidbodyFirstPersonController : MonoBehaviour
     {
+        private Animator anim;
+
         [Serializable]
         public class MovementSettings
         {
@@ -19,6 +22,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             public float JumpForce = 30f;
             public AnimationCurve SlopeCurveModifier = new AnimationCurve(new Keyframe(-90.0f, 1.0f), new Keyframe(0.0f, 1.0f), new Keyframe(90.0f, 0.0f));
             [HideInInspector] public float CurrentTargetSpeed = 8f;
+
 
 #if !MOBILE_INPUT
             private bool m_Running;
@@ -123,6 +127,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
             mouseLook.Init (transform, cam.transform);
+
+            anim = gameObject.GetComponentInChildren<Animator>();
         }
 
 
@@ -142,20 +148,34 @@ namespace UnityStandardAssets.Characters.FirstPerson
             GroundCheck();
             Vector2 input = GetInput();
 
-            if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
+            if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon)
+                && (advancedSettings.airControl || m_IsGrounded))
             {
                 // always move along the camera forward as it is the direction that it being aimed at
-                Vector3 desiredMove = cam.transform.forward*input.y + cam.transform.right*input.x;
+                Vector3 desiredMove = cam.transform.forward * input.y + cam.transform.right * input.x;
                 desiredMove = Vector3.ProjectOnPlane(desiredMove, m_GroundContactNormal).normalized;
 
-                desiredMove.x = desiredMove.x*movementSettings.CurrentTargetSpeed;
-                desiredMove.z = desiredMove.z*movementSettings.CurrentTargetSpeed;
-                desiredMove.y = desiredMove.y*movementSettings.CurrentTargetSpeed;
-                if (m_RigidBody.velocity.sqrMagnitude <
-                    (movementSettings.CurrentTargetSpeed*movementSettings.CurrentTargetSpeed))
+                if (movementSettings.Running)
                 {
-                    m_RigidBody.AddForce(desiredMove*SlopeMultiplier(), ForceMode.Impulse);
+                    anim.SetInteger("Speed", 2);
                 }
+                else
+                {
+                    anim.SetInteger("Speed", 1);
+                }
+
+                desiredMove.x = desiredMove.x * movementSettings.CurrentTargetSpeed;
+                desiredMove.z = desiredMove.z * movementSettings.CurrentTargetSpeed;
+                desiredMove.y = desiredMove.y * movementSettings.CurrentTargetSpeed;
+                if (m_RigidBody.velocity.sqrMagnitude <
+                    (movementSettings.CurrentTargetSpeed * movementSettings.CurrentTargetSpeed))
+                {
+                    m_RigidBody.AddForce(desiredMove * SlopeMultiplier(), ForceMode.Impulse);
+                }
+            }
+            else
+            {
+                anim.SetInteger("Speed", 0);
             }
 
             if (m_IsGrounded)
@@ -184,6 +204,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
             }
             m_Jump = false;
+            
+            anim.SetBool("Jumping", m_Jumping);
         }
 
 
